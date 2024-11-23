@@ -6,4 +6,5 @@
 create table SMJER(
 ime varchar(50)
 
+
 );
