@@ -4,6 +4,6 @@
 
 
 create table SMJER(
-IME VARCHAR(50)
+ime varchar(50)
 
 );
