@@ -2,7 +2,7 @@
 
 --use vjezba4;
 
-cretae tables tablica(
+create tables tablica(
 ime varchar(50)
 
 );
