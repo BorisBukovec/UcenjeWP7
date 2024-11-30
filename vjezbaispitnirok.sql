@@ -9,14 +9,15 @@ go
 
 create table IspitniRok(
 sifra int,
-predmet varchar(50),
+predmet int,
 vrstaIspita varchar(50),
 datum datetime,
-pristupio int
+pristupio bit
 );
 
 create table Pristupnici(
 ispitniRok int,
 studnet varchar(50),
-brojBodova 
+brojBodova char(20),
+ocjena char(5)
 );
