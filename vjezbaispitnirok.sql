@@ -8,16 +8,16 @@ use vjezbaispitnirok;
 go
 
 create table IspitniRok(
-sifra int,
-predmet varchar(50),
-vrstaIspita varchar(50),
-datum datetime,
-pristupio bit
+sifra int not null primary key identity(1,1),
+predmet varchar(50) not null,
+vrstaIspita varchar(50) not null,
+datum datetime null,
+pristupio bit not null
 );
 
 create table Pristupnici(
-ispitniRok int,
-studnet varchar(50),
-brojBodova int,
-ocjena int
+ispitniRok int not null references IspitniRok(sifra),
+studnet varchar(50) not null,
+brojBodova int null,
+ocjena int not null
 );
