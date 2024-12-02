@@ -12,11 +12,12 @@ sifra int,
 predmet varchar(50),
 vrstaIspita varchar(50),
 datum datetime,
-pristupio int
+pristupio bit
 );
 
 create table Pristupnici(
 ispitniRok int,
 studnet varchar(50),
-brojBodova 
+brojBodova int,
+ocjena int
 );
