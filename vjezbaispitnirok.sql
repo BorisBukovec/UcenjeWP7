@@ -9,7 +9,7 @@ go
 
 create table IspitniRok(
 sifra int,
-predmet int,
+predmet varchar(50),
 vrstaIspita varchar(50),
 datum datetime,
 pristupio bit
@@ -18,6 +18,6 @@ pristupio bit
 create table Pristupnici(
 ispitniRok int,
 studnet varchar(50),
-brojBodova char(20),
-ocjena char(5)
+brojBodova int,
+ocjena int
 );
