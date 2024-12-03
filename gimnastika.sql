@@ -47,3 +47,14 @@ kategorija_suca varchar(50),
 klub int not null references klubovi(sifra)
 );
 
+create table natjecanja(
+sifra int not null primary key identity(1,1),
+grad varchar(40) not null,
+adresa varchar(100) not null,
+vrijemenatjecanja datetime not null
+);
+
+create table klub_natjecanja(
+klub int not null references klubovi(sifra),
+natjecanje int not null references klubovi(sifra)
+);
