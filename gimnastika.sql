@@ -27,3 +27,23 @@ kategorija varchar(50) not null,
 email varchar(100),
 klub int not null references klubovi(sifra)
 );
+
+create table treneri(
+sifra int not null primary key identity(1,1),
+ime varchar(30) not null,
+prezime varchar(40) not null,
+oib char(11),
+email varchar(100),
+klub int not null references klubovi(sifra)
+);
+
+create table suci(
+sifra int not null primary key identity(1,1),
+ime varchar(30) not null,
+prezime varchar(40) not null,
+oib char(11),
+email varchar(100),
+kategorija_suca varchar(50),
+klub int not null references klubovi(sifra)
+);
+
