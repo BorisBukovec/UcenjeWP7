@@ -1,36 +1,67 @@
-﻿use edunovawp7;
+﻿-- Ovako se pišu komentari
 
-select * from smjerovi;						
+use master;
+go
+drop database if exists edunovawp7;
+go
+create database edunovawp7 collate Croatian_CI_AS;
+go
+use edunovawp7;
+go
 
---1
-insert into smjerovi
-(naziv,trajanje,cijena,vaucer,izvodiseod) values
-('Web programiranje',225,1245.99,1,'2024-09-07 17:00:00');
+create table smjerovi(
+sifra int not null primary key identity(1,1), -- ovo je primarni ključ
+naziv varchar(50) not null,
+trajanje int null, -- null se ne mora pisati
+cijena decimal(18,2),
+vaucer bit,
+izvodiseod datetime
+);
+
+create table polaznici(
+sifra int not null primary key identity(1,1),
+ime varchar(50) not null,
+prezime varchar(50) not null,
+oib char(11),
+email varchar(100) not null
+);
+
+create table grupe(
+sifra int not null primary key identity(1,1), 
+naziv varchar(20) not null,
+smjer int not null references smjerovi(sifra), -- ovo je vanjski ključ
+predavac varchar(50)
+);
+
+
+create table clanovi(
+grupa int not null references grupe(sifra),
+polaznik int not null references polaznici(sifra)
+);
+
+
+-- 1 (Ovo je šifra koju je dodjelila baza)
+insert into smjerovi 
+(naziv, trajanje, cijena, vaucer, izvodiseod) values
+('Web programiranje',225,1254.99,1,'2024-09-07 17:00:00');
 
 insert into smjerovi(naziv) values
---2
+-- 2
 ('Java programer'),
---3
+-- 3
 ('Serviser'),
---4
+-- 4
 ('Knjigovodstvo');
 
-SELECT * FROM GRUPE;
 
-insert into grupe(naziv,smjer) values
---1
-('Wp6',1),
---2
-('Wp7',1),
---3
+insert into grupe (naziv, smjer) values
+('WP6',1),
+('WP7',1),
 ('JP27',2),
---4
-('k12',4);
+('K12',4);
 
-SELECT * FROM POLAZNICI;
 
 INSERT INTO polaznici (ime, prezime, email) VALUES 
---1-27
 ('Ante', 'Janković', 'antejankovic86@gmail.com'),
 ('Stojan', 'Carić', 'stojancaric8@gmail.com'),
 ('Željko', 'Lučan', 'lucko1987vk@gmail.com'),
@@ -59,12 +90,12 @@ INSERT INTO polaznici (ime, prezime, email) VALUES
 ('Ivan', 'Strmečki', 'ivan.strmecki8@gmail.com'),
 ('Bruno', 'Bašić', 'brunobasic031@gmail.com');
 
-select * from clanovi;
 
 insert into clanovi (grupa,polaznik) values
-(2,1),(2,2),(2,3),(2,4),(2,5),(2,6),(2,7),
-(2,8),(2,9),(2,10),(2,11),(2,12),(2,13),(2,14),
-(2,15),(2,16),(2,17),(2,18),(2,19),(2,20),(2,21),
-(2,22),(2,23),(2,24),(2,25),(2,26),(2,27),
+(2,1),(2,2),(2,3),(2,4),(2,5),(2,6),
+(2,7),(2,8),(2,9),(2,10),(2,11),(2,12),
+(2,13),(2,14),(2,15),(2,16),(2,17),(2,18),
+(2,19),(2,20),(2,21),(2,22),(2,23),(2,24),
+(2,25),(2,26),(2,27),
 
 (3,7),(3,17),(3,27);
