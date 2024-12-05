@@ -1,4 +1,4 @@
-﻿﻿use master;
+﻿﻿﻿use master;
 go
 
 drop database if exists gimnastika;
@@ -51,7 +51,8 @@ create table natjecanja(
 sifra int not null primary key identity(1,1),
 grad varchar(40) not null,
 adresa varchar(100) not null,
-vrijemenatjecanja datetime not null
+datum datetime not null,
+iznoskotizacije int not null
 );
 
 create table klub_natjecanja(
