@@ -1,4 +1,5 @@
-﻿﻿﻿use master;
+﻿
+use master;
 go
 
 drop database if exists gimnastika;
@@ -14,7 +15,7 @@ create table klubovi(
 sifra int not null primary key identity(1,1),
 naziv varchar(100) not null,
 adresa varchar(100) not null,
-ziroracun int not null
+ziroracun varchar(50) not null
 );
 
 create table vjezbaci(
@@ -64,11 +65,12 @@ select * from klubovi;
 
 insert into klubovi
 (naziv,adresa,ziroracun) values
-('Gd Osijek-žito','Kralja Zvonimira 5 Osijek',1);
+('Gd Osijek-žito','Kralja Zvonimira 5 Osijek','HR134761872638934762536');
 
-insert into klubovi(naziv,adresa) values
+insert into klubovi(naziv,adresa,ziroracun) values
 --10
-('ZTD Hrvatski sokol Zagreb','Trg Republike Hrvatske 6 Zagreb'),
+('ZTD Hrvatski sokol Zagreb','Trg Republike Hrvatske 6 Zagreb','HR986473829487376263'),
 --11
-('Gimnastičko Društvo "Hrvatski Sokol" Valpovo','Dr. F. Tuđmana 2 Valpovo');
+('Gimnastičko Društvo "Hrvatski Sokol" Valpovo','Dr. F. Tuđmana 2 Valpovo','HR1836274958374653529');
+
 
