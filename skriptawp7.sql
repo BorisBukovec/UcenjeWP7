@@ -99,4 +99,3 @@ insert into clanovi (grupa,polaznik) values
 (2,25),(2,26),(2,27),
 
 (3,7),(3,17),(3,27);
-
