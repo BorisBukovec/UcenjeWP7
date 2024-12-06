@@ -68,9 +68,9 @@ insert into klubovi
 ('Gd Osijek-žito','Kralja Zvonimira 5 Osijek','HR134761872638934762536');
 
 insert into klubovi(naziv,adresa,ziroracun) values
---10
+--2
 ('ZTD Hrvatski sokol Zagreb','Trg Republike Hrvatske 6 Zagreb','HR986473829487376263'),
---11
+--3
 ('Gimnastičko Društvo "Hrvatski Sokol" Valpovo','Dr. F. Tuđmana 2 Valpovo','HR1836274958374653529');
 
 
