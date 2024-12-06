@@ -4,7 +4,7 @@ go
 drop database if exists gimnastika;
 go
 
-create database gimnastika;
+create database gimnastika collate Croatian_CI_AS;
 go
 
 use gimnastika;
@@ -59,3 +59,16 @@ create table klub_natjecanja(
 klub int not null references klubovi(sifra),
 natjecanje int not null references natjecanja(sifra)
 );
+
+select * from klubovi;
+
+insert into klubovi
+(naziv,adresa,ziroracun) values
+('Gd Osijek-žito','Kralja Zvonimira 5 Osijek',HR4723400091110432103);
+
+insert into klubovi(naziv) values
+--2
+('ZTD Hrvatski sokol Zagreb'),
+--3
+('Hrvatski sokol Valpovo');
+
