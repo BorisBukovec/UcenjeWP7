@@ -64,11 +64,11 @@ select * from klubovi;
 
 insert into klubovi
 (naziv,adresa,ziroracun) values
-('Gd Osijek-žito','Kralja Zvonimira 5 Osijek',HR4723400091110432103);
+('Gd Osijek-žito','Kralja Zvonimira 5 Osijek',1);
 
-insert into klubovi(naziv) values
---2
-('ZTD Hrvatski sokol Zagreb'),
---3
-('Hrvatski sokol Valpovo');
+insert into klubovi(naziv,adresa) values
+--10
+('ZTD Hrvatski sokol Zagreb','Trg Republike Hrvatske 6 Zagreb'),
+--11
+('Gimnastičko Društvo "Hrvatski Sokol" Valpovo','Dr. F. Tuđmana 2 Valpovo');
 
