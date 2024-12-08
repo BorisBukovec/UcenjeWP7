@@ -15,7 +15,7 @@ create table klubovi(
 sifra int not null primary key identity(1,1),
 naziv varchar(100) not null,
 adresa varchar(100) not null,
-ziroracun varchar(50) not null
+IBAN varchar(50) not null
 );
 
 create table vjezbaci(
@@ -35,7 +35,7 @@ ime varchar(30) not null,
 prezime varchar(40) not null,
 oib char(11) null,
 email varchar(100) not null,
-klub int not null references klubovi(sifra)
+klub varchar(100) not null references klubovi(sifra)
 );
 
 create table suci(
@@ -45,7 +45,7 @@ prezime varchar(40) not null,
 oib char(11) null,
 email varchar(100) not null,
 kategorija_suca varchar(50) not null,
-klub int not null references klubovi(sifra)
+klub varchar(100) not null references klubovi(sifra)
 );
 
 create table natjecanja(
@@ -64,10 +64,10 @@ natjecanje int not null references natjecanja(sifra)
 select * from klubovi;
 
 insert into klubovi
-(naziv,adresa,ziroracun) values
+(naziv,adresa,IBAN) values
 ('Gd Osijek-žito','Kralja Zvonimira 5 Osijek','HR134761872638934762536');
 
-insert into klubovi(naziv,adresa,ziroracun) values
+insert into klubovi(naziv,adresa,IBAN) values
 --2
 ('ZTD Hrvatski sokol Zagreb','Trg Republike Hrvatske 6 Zagreb','HR986473829487376263'),
 --3
@@ -88,3 +88,14 @@ insert into vjezbaci(ime,prezime,datumrodenja,spol,kategorija,klub) values
 --4
 ('Marko','Ivić','2016-07-17','muško','kadet','Gd Osijek-žito');
 
+select * from treneri;
+
+insert into treneri
+(ime,prezime,email,klub) values
+('Boris','Bukovec','botaosijek@gmail.com','Gimnastičko Društvo "Hrvatski Sokol" Valpovo');
+
+insert into treneri(ime,prezime,email,klub) values
+--2
+('Filip','Rosandić','filiprosandic@gmail.com','ZTD Hrvatski sokol Zagreb'),
+--3
+('Marko','Simon','markosimon@gmail.com','Gd Osijek-žito');
