@@ -26,7 +26,7 @@ datumrodenja datetime not null,
 spol varchar(20) not null,
 kategorija varchar(50) not null,
 email varchar(100) not null,
-klub int not null references klubovi(sifra)
+klub varchar(100) not null references klubovi(sifra)
 );
 
 create table treneri(
@@ -73,4 +73,18 @@ insert into klubovi(naziv,adresa,ziroracun) values
 --3
 ('Gimnastičko Društvo "Hrvatski Sokol" Valpovo','Dr. F. Tuđmana 2 Valpovo','HR1836274958374653529');
 
+select * from vjezbaci;
+
+insert into vjezbaci
+(ime,prezime,datumrodenja,spol,kategorija,klub) values
+('Ana','Anić','2015-08-13','žensko','kadetkinje','Gd Osijek-žito');
+
+
+insert into vjezbaci(ime,prezime,datumrodenja,spol,kategorija,klub) values
+--2
+('Maria','Hes','2013-04-22','žensko','juniorke','ZTD Hrvatski sokol Zagreb'),
+--3
+('Ivan','Marković','2016-08-09','muško','kadet','Gimnastičko Društvo "Hrvatski Sokol" Valpovo'),
+--4
+('Marko','Ivić','2016-07-17','muško','kadet','Gd Osijek-žito');
 
