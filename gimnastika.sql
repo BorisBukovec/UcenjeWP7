@@ -1,4 +1,5 @@
 ﻿
+
 use master;
 go
 
@@ -99,3 +100,21 @@ insert into treneri(ime,prezime,email,klub) values
 ('Filip','Rosandić','filiprosandic@gmail.com','ZTD Hrvatski sokol Zagreb'),
 --3
 ('Marko','Simon','markosimon@gmail.com','Gd Osijek-žito');
+
+select * from suci;
+
+insert into suci
+(ime,prezime,oib,kategorija_suca,klub) values
+('Marin','Marinić',52738294738,'nacionalni sudac','Gimnastičko Društvo "Hrvatski Sokol" Valpovo');
+
+insert into suci(ime,prezime,oib,kategorija_suca,klub) values
+--2
+('Žana','Bilić','regionalni sudac','ZTD Hrvatski sokol Zagreb'),
+--3
+('Vladimir','Jukić','nacionalni sudac','Gd Osijek-žito');
+
+select * from natjecanja;
+
+insert into natjecanja
+(grad,adresa,datum,iznoskotizacije) values
+('Osijek','Ul. Kneza Trpimira 23','2024-12-22 09:00:00',50);
