@@ -27,7 +27,7 @@ datumrodenja datetime not null,
 spol varchar(20) not null,
 kategorija varchar(50) not null,
 email varchar(100) not null,
-klub varchar(100) not null references klubovi(sifra)
+klub int not null references klubovi(sifra)
 );
 
 create table treneri(
@@ -36,7 +36,7 @@ ime varchar(30) not null,
 prezime varchar(40) not null,
 oib char(11) null,
 email varchar(100) not null,
-klub varchar(100) not null references klubovi(sifra)
+klub int not null references klubovi(sifra)
 );
 
 create table suci(
@@ -46,7 +46,7 @@ prezime varchar(40) not null,
 oib char(11) null,
 email varchar(100) not null,
 kategorija_suca varchar(50) not null,
-klub varchar(100) not null references klubovi(sifra)
+klub int not null references klubovi(sifra)
 );
 
 create table natjecanja(
