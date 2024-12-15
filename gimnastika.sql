@@ -124,8 +124,20 @@ insert into natjecanja
 --2
 ('Zagreb','Ježdovečka ulica 3B','2025-02-13 09:00:00',50);
 
+insert into klub_natjecanja
+(klub,natjecanje) values
+(1,1),
+(2,1),
+(3,1),
+
+insert into klub_natjecanja
+(klub,natjecanje) values
+(1,2),(2,2);
+
+
 select * from klubovi;
 select * from vjezbaci;
 select * from treneri;
 select * from suci;
 select * from natjecanja;
+select * from klub_natjecanja;
