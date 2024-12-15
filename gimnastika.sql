@@ -124,3 +124,8 @@ insert into natjecanja
 --2
 ('Zagreb','Ježdovečka ulica 3B','2025-02-13 09:00:00',50);
 
+select * from klubovi;
+select * from vjezbaci;
+select * from treneri;
+select * from suci;
+select * from natjecanja;
