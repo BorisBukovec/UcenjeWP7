@@ -128,11 +128,12 @@ insert into klub_natjecanja
 (klub,natjecanje) values
 (1,1),
 (2,1),
-(3,1),
+(3,1);
 
 insert into klub_natjecanja
 (klub,natjecanje) values
-(1,2),(2,2);
+(1,2),
+(2,2);
 
 
 select * from klubovi;
