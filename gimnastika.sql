@@ -135,7 +135,7 @@ insert into klub_natjecanja
 (1,2),
 (2,2);
 
-delete klubovi where sifra=4;
+
 
 select * from klubovi;
 select * from vjezbaci;
