@@ -65,10 +65,10 @@ natjecanje int not null references natjecanja(sifra)
 select * from klubovi;
 
 insert into klubovi
-(naziv,adresa,IBAN) values
+(naziv,adresa,iban) values
 ('Gd Osijek-žito','Kralja Zvonimira 5 Osijek','HR134761872638934762536');
 
-insert into klubovi(naziv,adresa,IBAN) values
+insert into klubovi(naziv,adresa,iban) values
 --2
 ('ZTD Hrvatski sokol Zagreb','Trg Republike Hrvatske 6 Zagreb','HR986473829487376263'),
 --3
