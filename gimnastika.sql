@@ -78,40 +78,40 @@ select * from vjezbaci;
 
 insert into vjezbaci
 (ime,prezime,datumrodenja,spol,kategorija,email,klub) values
-('Ana','Anić','2015-08-13','žensko','kadetkinje','anaanic@gmail.com','Gd Osijek-žito');
+('Ana','Anić','2015-08-13','žensko','kadetkinje','anaanic@gmail.com',1);
 
 
 insert into vjezbaci(ime,prezime,datumrodenja,spol,kategorija,email,klub) values
 --2
-('Maria','Hes','2013-04-22','žensko','juniorke','mariahes@gmail.com','ZTD Hrvatski sokol Zagreb'),
+('Maria','Hes','2013-04-22','žensko','juniorke','mariahes@gmail.com',2),
 --3
-('Ivan','Marković','2016-08-09','muško','kadet','ivanmarkovic@gmail.com','Gimnastičko Društvo "Hrvatski Sokol" Valpovo'),
+('Ivan','Marković','2016-08-09','muško','kadet','ivanmarkovic@gmail.com',3),
 --4
-('Marko','Ivić','2016-07-17','muško','kadet','markoivic@gmail.com','Gd Osijek-žito');
+('Marko','Ivić','2016-07-17','muško','kadet','markoivic@gmail.com',1);
 
 select * from treneri;
 
 insert into treneri
 (ime,prezime,oib,email,klub) values
-('Boris','Bukovec',62839563744,'botaosijek@gmail.com','Gimnastičko Društvo "Hrvatski Sokol" Valpovo');
+('Boris','Bukovec',62839563744,'botaosijek@gmail.com',3);
 
 insert into treneri(ime,prezime,oib,email,klub) values
 --2
-('Filip','Rosandić',44759023244,'filiprosandic@gmail.com','ZTD Hrvatski sokol Zagreb'),
+('Filip','Rosandić',44759023244,'filiprosandic@gmail.com',2),
 --3
-('Marko','Simon',76990325656,'markosimon@gmail.com','Gd Osijek-žito');
+('Marko','Simon',76990325656,'markosimon@gmail.com',1);
 
 select * from suci;
 
 insert into suci
-(ime,prezime,oib,kategorija_suca,klub) values
-('Marin','Marinić',52738294738,'nacionalni sudac','Gimnastičko Društvo "Hrvatski Sokol" Valpovo');
+(ime,prezime,oib,email,kategorija_suca,klub) values
+('Marin','Marinić',52738294738,'marinmarinic@gmail.com','nacionalni sudac',3);
 
-insert into suci(ime,prezime,oib,kategorija_suca,klub) values
+insert into suci(ime,prezime,oib,email,kategorija_suca,klub) values
 --2
-('Žana','Bilić',36389547865,'regionalni sudac','ZTD Hrvatski sokol Zagreb'),
+('Žana','Bilić',36389547865,'zanabilic@gmail.com','regionalni sudac',2),
 --3
-('Vladimir','Jukić',63859687657,'nacionalni sudac','Gd Osijek-žito');
+('Vladimir','Jukić',63859687657,'vladimir.j@gmail.com','nacionalni sudac',1);
 
 select * from natjecanja;
 
