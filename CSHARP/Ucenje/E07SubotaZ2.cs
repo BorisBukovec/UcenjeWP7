@@ -11,27 +11,60 @@ namespace Ucenje
 
         // Program od korisnika traži unos broj godina koje ima korisnik
         // Program ispisuje da li je korisnik punoljetna osoba ili ne
-        // dodatno: ako je unos ispod nula godine ili iznad 112 godina ispisati GREŠKA
+
+
+        // dodatno: ako je unos ispod nula godine ili iznad 112 godina ipisati GREŠKA
+
         public static void Izvedi()
         {
 
-            Console.Write("Unesi svoj broj godina: ");
-            int godine = int.Parse(Console.ReadLine());
-            if (godine >= 18)
+            // kompliciranje
+            int godine = 26;
+            bool aktivan = false;
+            string grad = "Osijek";
+
+            Console.WriteLine("Korisnik je stanovnik {0} grada, {1}, iako {2}",
+                grad=="Osijek" ? "super" : "prosječnog",
+                godine>=18 ? aktivan ? "A" : "B" : "C",
+                aktivan ? "D" : godine<18 ? "E" : grad!="osijek" ? "F" : "G"
+                );
+
+
+
+
+            int x = 4, y = 4, z = 7;
+            string rezultat;
+
+            if (x == y)
             {
-                Console.WriteLine("Korisnik je punoljetna osoba");
+                if (y == z)
+                {
+                    rezultat = "Sva tri broja su jednaka.";
+                }
+                else
+                {
+                    rezultat = "x i y su jednaki, ali z je drukčiji.";
+                }
             }
             else
-            { 
-            Console.WriteLine("Korisnik nije punoljetna osoba");
+            {
+                rezultat = "x je drukčiji od y.";
             }
 
-            Console.WriteLine("Korisnik {0} punoljetna osoba ({1})", godine>= 18 ? "je" : "nije", godine);
+            Console.WriteLine(rezultat);
 
-        
-        
+
+            //int x = 4, y = 4, z = 7;
+            //string rezultat = x == y
+            rezultat = x == y
+            ? (y == z
+            ? "Sva tri broja su jednaka."
+            : "x i y su jednaki, ali z je drukčiji.")
+            : "x je drukčiji od y.";
+            Console.WriteLine(rezultat);
+
+
         }
-
 
     }
 }

@@ -12,75 +12,54 @@ namespace Ucenje
         public static void Izvedi()
         {
 
-            // Console.WriteLine("E03");
+            //Console.WriteLine("E03");
 
-            // neče objašnjavati + - * /
+            // neću objašnjavati + - * /
 
             int i, j;
 
-            i = 2; j = 3;
+            i=2; j=3;
 
-            i += j;  // i=i+j zato isto i za - * /
+            i += j; // i = i + j, zako isto i za - * /
 
-            // modulo operator % ostatak nakon cijelobrojnog djeljenja
+            // modulo operator % ostatak nakonm cjelobrojnog djeljenja
 
-            Console.WriteLine(i / j);  // kada se dijele dvaint dobije se int(izgubi se decimalni broj)
-
+            Console.WriteLine(i/j); // kada se dijele dva int dobije se int (izguni se decimalni dio)
             Console.WriteLine(i/(float)j);
 
-            Console.WriteLine(5 % 2);
+            Console.WriteLine( 5 % 2 );
 
-            //increment i decrement
+
+            // increment i decrement
 
             i = 1;
-
-            //razliciti nacini uvećanja varijable za broj 1
+            //različiti načini uvećanja varijable za broj 1
             i = i + 1;
-
             i += 1;
-
             i++;
-
             ++i;
-            Console.WriteLine("*********");
 
-
+            Console.WriteLine("************************");
             i = 1;
-
             Console.WriteLine(i); //1
-            Console.WriteLine(i++); // 1   prvo se koristi pa se uveća
-            Console.WriteLine(++i); // 3 prvo se uveća pa se koristi
+            Console.WriteLine(i++); // 1   -> Prvo se koristi pa se onda uveća
+            Console.WriteLine(++i); // 3   -> Prvo se uveća pa se onda koristi
 
-            // sve isto vrijedi i za decrement i--,--i
+            // sve isto vrijedi i za decrement i-- , --i
 
-            Console.WriteLine("---------------");
+            Console.WriteLine("-------------------------");
 
             int x = 1, y = 0;
-            x = x + --y; // x=0,y=-1
-            y += ++x;  // x=1,y=0
+
+            x = x + --y; // x=0 , y=-1
+            y += ++x; // x=1, y=0
             Console.WriteLine(++x - y--); // 2
+            Console.WriteLine(y); // -1
 
 
-
-
-               
-
-           
-
-
-
-
-
-        
-        
-
-
-
-
-
-        
-        
         }
+
+
 
 
 

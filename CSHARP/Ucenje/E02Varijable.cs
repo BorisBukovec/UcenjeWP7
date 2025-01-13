@@ -15,39 +15,31 @@ namespace Ucenje
             //Console.WriteLine("E02");
 
             // Tipovi podataka
-            int cijeliBroj = 1;  //ovo je kraće kao da smo učitali od korisnika
 
-            bool logickaVrijednost = true;  // zadana vrijednost je false
+            int cijeliBroj = 1; // ovo je skraće kao da smo učitali od korisnika
 
-            float decimalniBroj = 4.5f;
+            bool logickaVrijednost = true; // zadana vrijednost je false
+
+            float decimalniBroj = 4.5F;
 
             double velikiDecimalniBroj = 3.14;
 
-            decimal decimalniBroj2 = 3.4m;
+            decimal decimalniBroj2 = 3.4M;
 
             char znak = '@';
 
             string nizZnakova = "abcdefg";
 
-            Console.WriteLine("Znak je broj {0}", (int)znak); //(int) je cast
+            Console.WriteLine("Znak je broj {0}", (int)znak); // (int) je cast
 
             cijeliBroj = int.MaxValue;
 
             Console.WriteLine(cijeliBroj);
             Console.WriteLine(cijeliBroj+1);
-          
 
-        
-        
-           
-        
-        
+
+
         }
-
-
-
-
-
 
 
 

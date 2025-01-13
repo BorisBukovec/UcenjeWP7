@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlTypes;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,47 +12,45 @@ namespace Ucenje
         public static void Izvedi()
         {
 
-            // ovdje pisemo kod
-            // Izlaz
-            Console.WriteLine("Pozdrav svijetu");
 
-            Console.Write("ovo je u liniji ");
+            // ovdje pišemo kod
+            // Izlaz
+            Console.WriteLine("Pozdrav svijetu!");
+
+            Console.Write("Ovo je u liniji ");
             Console.WriteLine("ovo je u istoj liniji ali nakon ispisa ode u novu liniju");
 
             Console.WriteLine("1. red\n2. red\tnakon taba");
+
 
             Console.WriteLine(1);
             Console.WriteLine(true);
             Console.WriteLine(4.6);
 
 
-            //Ulaz
 
+            // Ulaz
             int i;
             Console.Write("Unesi cijeli broj: ");
             i = int.Parse(Console.ReadLine());
 
-
-            //Izlaz
+            // izlaz
             Console.WriteLine("Unio si {0}",i);
 
-            //Ulaz
+
+
+            // Ulaz
             Console.Write("Unesi ime grada: ");
-            string grad= Console.ReadLine();
+            string grad = Console.ReadLine();
 
-
-            //Izlaz
+            // izlaz
             Console.WriteLine("Unio si " + grad);
 
 
-
-        }// kraj metoda
-        
-
-
+        } // kraj metoda
 
 
 
 
     }// kraj klasa
-}// kraj namespace
+} // kraj namespace

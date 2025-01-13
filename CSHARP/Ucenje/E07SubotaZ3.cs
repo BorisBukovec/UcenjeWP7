@@ -6,16 +6,17 @@ using System.Threading.Tasks;
 
 namespace Ucenje
 {
+    // Program od korisnika traži unos dva cijela broja
+    // Program ispisuje manji
+    // unos 5 i 2 -> 2
+    // unos 3 i 8 -> 3
+    // unos 4 i 4 -> Brojevi su jednaki
+
     internal class E07SubotaZ3
     {
-        //Program od korisnika traži unos dva cijela broja
-        //Program ispisuje manji
-        //Unos 5 i 2 -> 2
-        //unos 3 i 8 -> 3
-        //unos 4 i 4 -> Brojevi su jednaki
+
         public static void Izvedi()
         {
-
             Console.Write("Unesi prvi broj: ");
             int pb = int.Parse(Console.ReadLine());
 
@@ -24,10 +25,9 @@ namespace Ucenje
 
             Console.WriteLine(pb<db ? pb : db<pb ? db : "Jednaki su");
 
+
+            // DZ: isto nappraviti za tri broja
         }
-
-
-
 
     }
 }

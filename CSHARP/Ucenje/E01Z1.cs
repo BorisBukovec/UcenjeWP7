@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Channels;
 using System.Threading.Tasks;
 
 namespace Ucenje
@@ -12,11 +11,10 @@ namespace Ucenje
 
         public static void Izvedi()
         {
-
-            // Console.WriteLine("E01Z1");
+            //Console.WriteLine("E01Z1");
 
             // Program od korisnika unosi zasebno ime i prezime
-            // program ispisuje prezime i ime 
+            // Program ispisuje prezime i ime
 
             Console.Write("Unesi svoje ime: ");
             string ime = Console.ReadLine();
@@ -25,8 +23,6 @@ namespace Ucenje
             string prezime = Console.ReadLine();
 
             Console.WriteLine("{0} {1}", prezime,ime);
-
-
 
 
         }
