@@ -3,7 +3,15 @@
 
 
 using Ucenje;
-E12Z2.Izvedi();
+
+E14Z2.Izvedi();
+
+//E14Z1.Izvedi();
+
+
+//E14Metode.Izvedi();
+
+//E12Z2.Izvedi();
 
 //E12Z1.Izvedi();
 
