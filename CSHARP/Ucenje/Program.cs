@@ -4,20 +4,13 @@
 
 using Ucenje;
 
-<<<<<<< HEAD
-//E14Z2.Izvedi();
-
-//E14Z1.Izvedi();
-
+E14Z3.Izvedi();
 
 //E14Metode.Izvedi();
 
-//E12Z2.Izvedi();
-=======
 //E13Z2.Izvedi();
 
 //E13TryCatch.Izvedi();
->>>>>>> 36d40a03644c7ee0dab18e7025b51282f1b33756
 
 //E12Z1.Izvedi();
 
