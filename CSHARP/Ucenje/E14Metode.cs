@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -198,9 +199,41 @@ namespace Ucenje
                 }
 
             }
+           
+
+
+            
+
+
+
+
+
+
+
 
 
             //return 0;
+        
+        }
+
+        public static string UcitajString(string poruka) 
+        {
+            string s;
+
+            do
+            {
+
+                Console.WriteLine(poruka + ": ");
+                s = Console.ReadLine();
+                if (s Trim().length)
+            
+            
+            
+            
+            }
+        
+        
+        
         
         }
 
