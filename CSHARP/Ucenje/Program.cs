@@ -4,7 +4,11 @@
 
 using Ucenje;
 
-E14Z3.Izvedi();
+E16Vjezbanje.Izvedi();
+
+//E15Rekurzija.Izvedi();
+
+//E14Z3.Izvedi();
 
 //E14Metode.Izvedi();
 

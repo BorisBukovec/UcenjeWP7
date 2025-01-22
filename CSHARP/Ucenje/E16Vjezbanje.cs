@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,25 +13,20 @@ namespace Ucenje
         {
             Console.BackgroundColor = ConsoleColor.Gray;
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("Dobro došli u vježbanje srijedom");
+            Console.WriteLine("Dobrodošli u vježbanje srijedom");
             Console.ResetColor();
             Izbornik();
-            Console.WriteLine("Doviđenja");
-                  
-              
+            Console.WriteLine("Doviđenja!");
         }
-
 
         private static void Izbornik()
         {
             Console.WriteLine();
             Console.WriteLine("1. Za uneseni broj provjeri da li je parni ili ne?");
-            Console.WriteLine("2 Riječ unazad");
+            Console.WriteLine("2. Riječ unazad");
             Console.WriteLine("3. Provjera sigurnosti lozinke");
             Console.WriteLine("0. Izlaz iz aplikacije");
             OdabirOpcijeIzbornika();
-
-                                
         }
 
         private static void OdabirOpcijeIzbornika()
@@ -44,40 +37,82 @@ namespace Ucenje
                     ParnostBroja();
                     Izbornik();
                     break;
-
                 case 2:
                     RijecUnazad();
                     Izbornik();
                     break;
-                                    case 0:
+                case 3:
+                    ProvjeraSigurnostiLozinke();
+                    Izbornik();
+                    break;
+                case 0:
                     break;
                 default:
                     Console.WriteLine("Nije opcija izbornika");
                     Izbornik();
                     break;
-
-
             }
-
-           
         }
-        public static void RijecUnazad()
+
+        private static void ProvjeraSigurnostiLozinke()
         {
+            NaslovPrograma("Program za unesenu lozinku ispisuje da li je: dobra, loša ili zla");
+            string lozinka = E14Metode.UcitajString("Unesi svoju lozinku za provjeru", "Obavezan unos");
+            // maskiranje u subotu https://stackoverflow.com/questions/3404421/password-masking-console-application
 
-            NaslovPrograma("Program za unesenu riječ ispisuje istu nazad.");
-                string unos = E14Metode.UcitajString("Unesi riječ", "Nisi unio riječ");
+            int razina = 0;
 
+            if (lozinka.Length >= 8)
+            {
+                razina++;
+            }
+            // imaš broj u sebi
+            razina += ProvjeraLozinka(lozinka, 48, 57);
+
+            // imaš mali znak u sebi
+            razina += ProvjeraLozinka(lozinka,97,122);
+
+            // imaš veliki znak u sebi
+            razina += ProvjeraLozinka(lozinka, 65, 90);
+
+            // interpukcijski znakovi
+            razina += (ProvjeraLozinka(lozinka, 33, 47) 
+                + ProvjeraLozinka(lozinka, 58, 63) 
+                + ProvjeraLozinka(lozinka, 123, 126))>0 ? 1 : 0;
+
+            Console.WriteLine(razina);
 
         }
+
+        private static int ProvjeraLozinka(string lozinka, int v1, int v2)
+        {
+            foreach (char z in lozinka)
+            {
+                if (z >= v1 && z <= v2)
+                {
+                    return 1;
+                }
+            }
+            return 0;
+        }
+
+        private static void RijecUnazad()
+        {
+            NaslovPrograma("Program za unesenu riječ ispisuje istu unazad.");
+            string unos = E14Metode.UcitajString("Unesi riječ","Nisi unio riječ");
+            for(int i = unos.Length - 1; i >= 0; i--)
+            {
+                Console.Write(unos[i]);
+            }
+            Console.WriteLine();
+        }
+
         private static char z = '-';
 
-        public static void NaslovPrograma(string v)
+        private static void NaslovPrograma(string v)
         {
-            for (int i = 0; i < v.Length + 6; i++)
-            {
-                Console.Write("-");
-            }
-            Console.WriteLine("-- {0} --",v);
+            Linija(v.Length + 6);
+            Console.WriteLine("{0}{1} {2} {3}{4}",z,z,v,z,z);
             Linija(v.Length + 6);
         }
 
@@ -85,34 +120,24 @@ namespace Ucenje
         {
             for (int i = 0; i < v; i++)
             {
-                Console.Write(z);
+                Console.Write(z); // ovaj ostaje u istom redu
             }
-            Console.WriteLine();
-        
+            Console.WriteLine(); // ovaj ode u novi red
         }
 
-        public static void ParnostBroja()
+        private static void ParnostBroja()
         {
-
-            Console.WriteLine("------------------------");
-            Console.WriteLine("--Program za uneseni broj ispisuje da li je paran ili ne");
-            Console.WriteLine("------------------------");
-            int broj = E14Metode.UcitajBroj("Unesi cijeli broj za provjeru",1,100);
+            NaslovPrograma("Program za uneseni broj ispisuje da li je paran ili ne.");
+            int broj = E14Metode.UcitajBroj("Unesi cijeli broj za provjeru", 1, 100);
             if (broj % 2 == 0)
             {
-                Console.WriteLine("Broj {0} je paran ", broj);
-
+                Console.WriteLine("Broj {0} je paran",broj);
             }
             else
             {
-                Console.WriteLine("Broj {0} je paran ", broj);
-            
+                Console.WriteLine("Broj {0} je neparan", broj);
             }
-            Console.WriteLine("-- Kraj programa provjere parnosti broja --");
-
-
+            Console.WriteLine("-- Kraj programa provjere parnosti broja --"); // i ovo bi se dalo izvući u metodu
         }
-
-
     }
 }

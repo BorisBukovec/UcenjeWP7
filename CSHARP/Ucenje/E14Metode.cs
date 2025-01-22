@@ -150,7 +150,12 @@ namespace Ucenje
 
 
 
-
+        /// <summary>
+        /// Unosi string
+        /// </summary>
+        /// <param name="poruka">Poruka koja se ispijuje korisniku</param>
+        /// <param name="greska">Poruka greške u slučaju da nije napravio unos</param>
+        /// <returns>String koji je unio korisnik</returns>
         public static string UcitajString(string poruka, string greska)
         {
             string s;
