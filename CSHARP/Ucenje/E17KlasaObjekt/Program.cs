@@ -20,12 +20,12 @@ namespace Ucenje.E17KlasaObjekt
             Osoba osoba = new Osoba(); // kreiranje objekta klase Osoba
 
             osoba.Sifra = 1;
-            osoba.Ime = "Pero";
+            osoba.Ime = "Pero"; // pozvao si setter (ucahurivanje)
             osoba.Prezime = "Perić";
             osoba.DatumRodenja = new DateTime(2000, 1, 1);
 
 
-            Console.WriteLine(osoba.Ime);
+            Console.WriteLine(osoba.Ime); // pozvao si getter (ucahurivanje)
 
             Osoba[] osobe = new Osoba[3];
 
@@ -43,8 +43,9 @@ namespace Ucenje.E17KlasaObjekt
             }
 
             Console.WriteLine("********************************");
-
+            Console.WriteLine(osoba.Moje); // izvana se moze samo citati, a u klasi se postavljati
             Console.WriteLine(osoba.ImePrezime()); // na objektu osoba zovem metodu ImePrezime
+            Console.WriteLine(osoba.Moje);
             //osoba.Hello(); // ovo ne mogu
             Osoba.Hello(); // ovo mogu jer je metoda static
 
