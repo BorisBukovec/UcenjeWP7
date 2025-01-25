@@ -8,7 +8,8 @@ namespace Ucenje.E17KlasaObjekt
 {
     // Klase je opisnik objekta  -> Ovo naučiti napamet
     public class Osoba
-    {
+    { 
+
         // klasa sadrži svojstva
         // princip učahurivanja  -> najcesce POCO (Plain Old C# Object)
         //  Svjostva klase se pišu sa velikim početnim slovom
