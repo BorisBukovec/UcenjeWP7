@@ -6,24 +6,34 @@ using System.Threading.Tasks;
 
 namespace Ucenje.E17KlasaObjekt
 {
-    //klasa je opisnik objekta->ovo naučiti napamet
+    // Klase je opisnik objekta  -> Ovo naučiti napamet
     public class Osoba
     {
-        //klasa sadrži svojstva 
-        //princip učahurivanja -> najcesce se POCO (plain old c# objekt)
+        // klasa sadrži svojstva
+        // princip učahurivanja  -> najcesce POCO (Plain Old C# Object)
+        //  Svjostva klase se pišu sa velikim početnim slovom
         public int Sifra { get; set; }
         public string? Ime { get; set; } // ? znaci da moze biti null
-        public string Prezime { get; set; } = ""; // ="" ce postaviti prazno ,nece biti null
+        public string Prezime { get; set; } = ""; // ="" ce postaviti prazno, nece biti null
         public DateTime? DatumRodenja { get; set; }
 
+        // ovo je iz konteksta baza veza 1:n
+        public Mjesto Mjesto { get; set; } = new Mjesto();
 
-        //klasa može sadrzavati metode
+        // ovo je iz konteksta baza veza n:n
+        public Mjesto[]? Mjesta { get; set; }
 
 
-        public string ImePrezime()
+        // klasa može sadržavati metode
+        // metoda vidi i upravlja svojstvima klase
+        /// <summary>
+        /// Vraća puno ime i prezime osobe.
+        /// </summary>
+        /// <returns>String koji sadrži ime i prezime osobe.</returns>
+        public string ImePrezime()    // nema static jer static metode se zovu na klasi, a bez static se zovu na objektu
         {
-            NeVidiSeIzvana()
-            return Ime + " " + Prezime;  // nije dobro riješenje
+            NeVidiSeIzvana();
+            return Ime + " " + Prezime; // ovo nije baš dobro rješenje - string je imutable
         }
 
         private string NeVidiSeIzvana()
@@ -31,5 +41,10 @@ namespace Ucenje.E17KlasaObjekt
             return "";
         }
 
+
+        public static void Hello() // Nju zovem na klasi, a ne na objektu, Osoba.Hello();
+        {
+            Console.WriteLine("Hello");
+        }
     }
 }
