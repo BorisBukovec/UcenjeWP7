@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 namespace Ucenje.E18NasljedivanjePolimorfizam
 {
     // Nasljedivanje je OOP princip pomocu kojeg jedna klasa moze naslijediti javna i zasticena svojstva i metode druge klase
-    public class Entitet : Object // svaka klasa nasljeduje klasu Object htjela ona to ili ne
+    // Apstaraktna klasa je ona klasa koja ne moze imati instancu (objekt) ALI ju druge klase nasljeduju i nadopunjuju
+    public abstract class Entitet : Object // svaka klasa nasljeduje klasu Object htjela ona to ili ne
     {
 
         private string NeVidimUPodKlasama = "";

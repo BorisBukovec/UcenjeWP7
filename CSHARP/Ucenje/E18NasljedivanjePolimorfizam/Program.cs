@@ -70,13 +70,57 @@ namespace Ucenje.E18NasljedivanjePolimorfizam
             }
 
 
-            s = new() { Naziv = "Web programiranje" };
+            s = new() { Sifra=1, Naziv = "Web programiranje" };
             Console.WriteLine(s.GetHashCode());
-            s2 = new() { Naziv = "Web programiranje" };
+            s2 = new() { Sifra=2, Naziv = "Web programiranje" };
             Console.WriteLine(s2.GetHashCode());
             Console.WriteLine(s.Equals(s2));
 
 
+            //Entitet e = new(); // ne mozes instancirati apstraktnu klasu
+            // e.Sifra = 1;
+
+            // A sto ako bas zelim koristiti sve iz Entiteta?
+
+            var e = new EntitetImpl();
+            e.Sifra = 1;
+
+
+            // Uskoro polimorfizam, jos malo pozornice
+
+            Obrada[] obrade = new Obrada[4]; 
+
+            obrade[0] = new ObradaUlazniRacun();
+            obrade[1] = new ObradaUlazniRacun();
+            obrade[2] = new ObradaIzlazniRacun();
+            obrade[3] = new ObradaUlazniRacun();
+            Console.WriteLine("****************************");
+            ZavrsiPosao(obrade);
+
+
+            Console.WriteLine("****************************");
+
+            var smjerBaza = new edunova.Smjer() { Sifra=1,Naziv="Dizajn",Cijena=1.4m};
+
+            Console.WriteLine(smjerBaza);
+
+            Console.WriteLine(new edunova.Polaznik() { Ime="Pero", Sifra=1, Prezime="Peric"});
+
+        }
+
+
+
+
+
+        private void ZavrsiPosao(Obrada[] obrade)
+        {
+            // ovo je polimorfizam (viseoblicje)
+            foreach (var o in obrade)
+            {
+                Console.WriteLine(o.GetType());
+                Console.WriteLine(o.Opis());
+                o.Obradi();
+            }
         }
 
     }

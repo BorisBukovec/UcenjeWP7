@@ -42,5 +42,16 @@ namespace Ucenje.E18NasljedivanjePolimorfizam
             return "{\"sifra\": " + Sifra + ", \"naziv\": \"" + Naziv + "\"}";
         }
 
+        // za primjer ali ovo je bolje ostaviti default - po HashCode
+        override public bool Equals(object obj)
+        {
+            if (!(obj is Smjer))
+            {
+                return false;
+            }
+
+            return Naziv == ((Smjer)obj).Naziv && Sifra== ((Smjer)obj).Sifra;
+        }
+
     }
 }
