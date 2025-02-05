@@ -23,7 +23,8 @@ app.UseAuthorization();
 app.UseSwagger();
 app.UseSwaggerUI(p =>
 {
-    p.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+    p.EnableTryItOutByDefault();
+    p.ConfigObject.AdditionalItems.Add("requestSnippetstEnabled",true);
 });
 
 app.MapControllers();
