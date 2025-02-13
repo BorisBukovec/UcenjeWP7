@@ -1,5 +1,9 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using PdfSharp.Drawing;
+using PdfSharp.Pdf;
+using System.Diagnostics;
+using System.Text;
 using Ucenje.E20KonzolnaAplikacija.Model;
 
 namespace Ucenje.E20KonzolnaAplikacija
@@ -13,7 +17,7 @@ namespace Ucenje.E20KonzolnaAplikacija
 
         public Izbornik() 
         {
-            Pomocno.DEV = true;
+            Pomocno.DEV = false;
             ObradaSmjer = new ObradaSmjer();
             ObradaPolaznik = new ObradaPolaznik();
             ObradaGrupa = new ObradaGrupa(this);
@@ -44,13 +48,14 @@ namespace Ucenje.E20KonzolnaAplikacija
             Console.WriteLine("2. Polaznici");
             Console.WriteLine("3. Grupe");
             Console.WriteLine("4. Izlaz iz programa");
+            Console.WriteLine("5. Hello PDF");
             OdabirOpcijeIzbornika();
         }
 
         private void OdabirOpcijeIzbornika()
         {
             
-            switch(Pomocno.UcitajRasponBroja("Odaberite stavku izbornika", 1, 4))
+            switch(Pomocno.UcitajRasponBroja("Odaberite stavku izbornika", 1, 5))
             {
                 case 1:
                     Console.Clear();
@@ -71,7 +76,67 @@ namespace Ucenje.E20KonzolnaAplikacija
                     Console.WriteLine("Hvala na korištenju aplikacije, doviđenja!");
                     SpremiPodatke();
                     break;
+                case 5:
+                    HelloPDF();
+                    PrikaziIzbornik();
+                    break;
             }
+        }
+
+        private void HelloPDF()
+        {
+            // Create a new PDF document
+
+            PdfDocument document = new PdfDocument();
+
+            document.Info.Title = "Created with PDFsharp";
+
+
+
+            // Create an empty page
+
+            PdfPage page = document.AddPage();
+
+
+
+            // Get an XGraphics object for drawing
+
+            XGraphics gfx = XGraphics.FromPdfPage(page);
+
+
+
+            // Create a font
+
+            XFont font = new XFont("Verdana", 30);
+
+            // Draw the text
+
+           
+
+            var sb = new StringBuilder();
+            sb.AppendLine("Smjerovi;");
+            sb.AppendLine();
+            var rb = 0;
+            foreach (var s in ObradaSmjer.Smjerovi)
+            {
+                sb.Append(++rb).Append(". ");
+                sb.AppendLine(s.Naziv);
+            }
+
+            gfx.DrawString(sb.ToString(), font, XBrushes.Red, new XRect(10, 10, page.Width-10, page.Height-10),XStringFormats.Center);
+
+            // Save the document...
+
+            string docPath =
+        Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+
+
+
+            document.Save(Path.Combine(docPath, "HelloWorld.pdf"));
+
+            // ...and start a viewer.
+
+            //Process.Start(filename);
         }
 
         private void SpremiPodatke()

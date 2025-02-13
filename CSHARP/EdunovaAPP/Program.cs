@@ -1,3 +1,6 @@
+using EdunovaAPP.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,25 +9,33 @@ builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
+// dodati swagger
 builder.Services.AddSwaggerGen();
+
+
+// dodavanje db contexta
+builder.Services.AddDbContext<EdunovaContext>(o => {
+    o.UseSqlServer(builder.Configuration.GetConnectionString("EdunovaContext"));
+});
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.MapOpenApi();
-}
+
+app.MapOpenApi();
+
+
 
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
+// swagger sucelje
 app.UseSwagger();
-app.UseSwaggerUI(p =>
+app.UseSwaggerUI(o =>
 {
-    p.EnableTryItOutByDefault();
-    p.ConfigObject.AdditionalItems.Add("requestSnippetsEnabled", true);
+    o.EnableTryItOutByDefault();
+    o.ConfigObject.AdditionalItems.Add("requestSnippetsEnabled", true);
 });
 
 app.MapControllers();

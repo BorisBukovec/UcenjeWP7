@@ -16,7 +16,11 @@ namespace Ucenje.E20KonzolnaAplikacija
         public ObradaGrupa(Izbornik izbornik):this()
         {
             this.Izbornik = izbornik;
-            Ucitajtestnepodatke();
+            if (Pomocno.DEV)
+            {
+                Ucitajtestnepodatke();
+            }
+            
         }
 
         private void Ucitajtestnepodatke()
@@ -108,6 +112,8 @@ namespace Ucenje.E20KonzolnaAplikacija
         private void PromjeniPodatkeGrupe()
         {
             PrikaziGrupe();
+
+
             var g = Grupe[
                 Pomocno.UcitajRasponBroja("Odaberi redni broj grupe za promjenu",1,Grupe.Count)-1
                 ];
